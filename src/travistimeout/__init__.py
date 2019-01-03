@@ -40,7 +40,7 @@ def main():
         end_of_line = datetime.utcnow() + timedelta(seconds=args.max_timeout)
 
     # start the process
-    p = subprocess.Popen([args.command] + args.args)
+    p = subprocess.Popen([args.command] + args.args, stdout=sys.stdout)
 
     # setup signals
     signal.signal(signal.SIGTERM, lambda sig, frame: stop_process(p, sig))
@@ -74,7 +74,9 @@ def stop_process(process, sig=signal.SIGTERM):
 
 def disturb():
     """Disturb standard error."""
-    log("travis pls", sys.stderr, AnsiColors.BOLD_YELLOW)
+    # log("sending keep alive", sys.stderr, AnsiColors.BOLD_YELLOW)
+
+    log('sending keep alive')
 
 
 def log(message, output=sys.stdout, color=AnsiColors.CLEAR):

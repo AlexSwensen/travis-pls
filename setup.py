@@ -4,20 +4,20 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = "travispls",
+    name = "travistimeout",
     version = "1.0.1",
     packages = find_packages('src'),
     package_dir = { '': 'src'},
-    author = "Naftuli Kay",
-    author_email = "me@naftuli.wtf",
-    url = "https://github.com/naftulikay/travis-pls",
+    author = "Alexander Swensen",
+    author_email = "contact@alexswensen.io",
+    url = "https://github.com/AlexSwensen/travis-timeout",
     install_requires = [
         'setuptools'
     ],
     dependency_links = [],
     entry_points = {
         'console_scripts': [
-            'travis-pls = travispls:main'
+            'travis-timeout = travistimeout:main'
         ]
     }
 )
